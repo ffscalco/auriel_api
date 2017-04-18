@@ -6,10 +6,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '5.0.2'
-gem 'pg',    '0.20.0'
-gem 'puma',  '3.8.2'
-
+gem 'rails',  '5.0.2'
+gem 'pg',     '0.20.0'
+gem 'puma',   '3.8.2'
+gem 'devise', '4.2.1'
 group :development, :test do
   gem 'byebug', '9.0.6', platform: :mri
   gem 'rspec-rails',              '3.5.2'
