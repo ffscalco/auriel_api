@@ -1,31 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before do
-    @user = FactoryGirl.build(:user)
-  end
-
   context "validations" do
-    describe "attributes" do
-      it "must have an email" do
-        expect(@user).to respond_to(:email)
+    describe "email" do
+      it "must be present" do
+        is_expected.to validate_presence_of(:email)
       end
 
-      it "must have a name" do
-        expect(@user).to respond_to(:name)
+      it "must be uniq" do
+        is_expected.to validate_uniqueness_of(:email).case_insensitive
       end
 
-      it "must have a password" do
-        expect(@user).to respond_to(:password)
-      end
-
-      it "must have a password_confirmation" do
-        expect(@user).to respond_to(:password_confirmation)
+      it "must be in the correct format" do
+        is_expected.to allow_value("test@email.com").for(:email)
       end
     end
 
-    it "must be valid" do
-      expect(@user).to be_valid
+    it "password must be confirmed" do
+      is_expected.to validate_confirmation_of(:password)
     end
   end
 end
