@@ -6,6 +6,7 @@ if ENV['coverage'] == 'on'
 end
 
 RSpec.configure do |config|
+  config.color = true
   config.disable_monkey_patching!
   config.order = :random
   Kernel.srand config.seed
