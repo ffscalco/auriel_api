@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let(:user) { build(:user) }
+
   context 'validations' do
     describe 'email' do
       it 'must be present' do
@@ -18,6 +20,18 @@ RSpec.describe User, type: :model do
 
     it 'password must be confirmed' do
       is_expected.to validate_confirmation_of(:password)
+    end
+
+    it 'auth_token must be uniq' do
+        is_expected.to validate_uniqueness_of(:auth_token)
+      end
+  end
+
+  describe '#info' do
+    it 'returns emails and created_at' do
+      user.save!
+
+      expect(user.info).to eq("#{user.email} - #{user.created_at}")
     end
   end
 end
