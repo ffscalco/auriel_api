@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   let(:user) { build(:user) }
 
   context 'validations' do
+    it { is_expected.to have_many(:tasks).dependent(:destroy) }
+
     describe 'email' do
       it 'must be present' do
         is_expected.to validate_presence_of(:email)
