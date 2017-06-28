@@ -11,10 +11,9 @@ gem 'pg',     '0.20.0'
 gem 'puma',   '3.8.2'
 gem 'devise', '4.2.1'
 group :development, :test do
-  gem 'byebug', '9.0.6', platform: :mri
   gem 'rspec-rails',              '3.5.2'
   gem 'factory_girl_rails',       '4.8.0'
-  gem 'pry-rails',                '0.3.6'
+  gem 'pry-byebug',               '3.4.2'
   gem 'awesome_print',            '1.7.0'
   gem 'spring-commands-rspec',    '1.0.4'
   gem 'fuubar',                   '2.2.0'
