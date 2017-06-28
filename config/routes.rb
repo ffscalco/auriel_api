@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     #default is always the last version
     namespace :v1, path: '/', constraints: ApiVersionConstraint.new(version: 1, default: true) do
       resources :users, expect: [:index]
-      resources :sessions, only: [:create]
+      resources :sessions, only: [:create, :destroy]
     end
   end
 end
