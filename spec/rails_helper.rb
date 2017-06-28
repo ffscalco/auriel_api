@@ -19,5 +19,5 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include ActiveSupport::Testing::TimeHelpers
-  config.include RequestSpecHelper, type: :request
+  config.include RequestSpecHelper
 end
