@@ -11,6 +11,7 @@ gem 'pg',                       '0.20.0'
 gem 'puma',                     '3.8.2'
 gem 'devise',                   '4.2.1'
 gem 'active_model_serializers', '0.10.6'
+gem 'ransack',                  '1.8.3'
 
 group :development, :test do
   gem 'rspec-rails',              '3.5.2'
