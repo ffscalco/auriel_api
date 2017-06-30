@@ -6,10 +6,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails',  '5.0.2'
-gem 'pg',     '0.20.0'
-gem 'puma',   '3.8.2'
-gem 'devise', '4.2.1'
+gem 'rails',                    '5.0.2'
+gem 'pg',                       '0.20.0'
+gem 'puma',                     '3.8.2'
+gem 'devise',                   '4.2.1'
+gem 'active_model_serializers', '0.10.6'
+
 group :development, :test do
   gem 'rspec-rails',              '3.5.2'
   gem 'factory_girl_rails',       '4.8.0'
